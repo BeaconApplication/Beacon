@@ -1,8 +1,8 @@
 # Beacon
 ###### tags: Codepath
-:::info
-Allows users to store precise points on the map, can associate a location with a title and description. 
-:::
+
+> Allows users to store precise points on the map, can associate a location with a title and description. 
+
 
 ## Table of Contents
 1. [App Overview](#App_Overview)
