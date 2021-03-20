@@ -45,6 +45,11 @@
     * User can view all pins they created in a list, tapping on a pin displays information about the pin.
 * Map Screen
     * A map that has pins for users to see and create (optional) chats in.
+* Settings Screen
+    * Screen allows management of account and app settings
+* Create Pin
+    * Tapping plus button shows dialog box with title, description, public/private, and chat parameters.
+    * (Optional) Can share pins with users.
 * Messages Screen (optional)
     * User can view recent messages from proximity chat, or recently used group chats from pins.
     * User can send and recieve messages and their notifications to users in a proximity or in a group chat.
