@@ -16,7 +16,7 @@
 - **Category:** Social Networking/event creation(optional)
 - **Mobile:** This app will be created primarily for mobile, but could also be as viable on a computer, but Functionalities of the app could potentially have more features on the mobile version of the app.
 - **Story:** Anaylzes users pin points which connects them to other users with the same pin point so that they can chat and make events.
-- **Market:** 13+ is recommended age for the app because this app is more for social networking/meeting new people, and having fun at a pin point location, so it would be better for the user to be atleast 13+ to create social events. 
+- **Market:** 13+ is recommended age for the app because this app is more for social networking/meeting new people, and having fun at a pin point location, so it would be better for the user to be at least 13+ to create social events. 
 - **Habit:** There is no restriction to how often or unoften the app should be used, so it is totally dependant on the individual user and how many different groups of people they want to meet. 
 - **Scope:** First we would start pairing people by local location pin points they like, then this would perhaps evolve into more further/world wide location pin points where users could potentially make friends from different countries and socialize/plan a vacation with a big group to cure their boredum. 
 
