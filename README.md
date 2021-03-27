@@ -66,3 +66,51 @@
 
 ### Wireframes
 <img src="https://github.com/BeaconApplication/Beacon/blob/main/wireframes.png" width=1000><br>
+
+## Schema
+### Models
+#### User
+| Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | objectId  | String   | Unique id for the user (default field) |
+   | emailVerified   | Boolean| Determines if user email has been verified |
+   | username      | String     | Public username for User |
+   | password| String   | Stores user password |
+   | email   | String  | Stores the email of the user |
+   | profilePicture    | File  | Profile picture for user |
+   | createdAt | DateTime | Date when user is created (default field) |
+   | updatedAt| DateTime | Date when user is last updated (default field) |
+#### Pin
+| Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | objectId      | String   | Unique id for the pin (default field) |
+   | creator        | Pointer to User| Pointer to pin author |
+   | pinImage         | File     | Image that user posts with pin |
+   | pinDescription| String   | Pin description by author |
+   | pinLocation| Array  | Stores the location of the pin (from Maps API) |
+   | isPublic  | boolean  | Determines whether or not the pin is public |
+   | createdAt  | DateTime | Date when pin is created (default field) |
+   | updatedAt | DateTime | Date when pin is last updated (default field) |
+
+### Networking
+#### List of network requests by screen
+   - Pin Screen
+      - (Create/GET) Query all pins where user is author
+   - Map Screen
+      - (Create/GET) Query all pins where user is author
+      - (Create/POST) Create a new pin on maps
+      - (Create) Delete a your pin whether it is public or private. 
+   - Create Pin Screen
+      - (Create/POST) Create a new pin object
+   - Profile Screen
+      - (Create/GET) Query logged in user object
+      - (Create/PUT) Update user profile image
+
+##### An API Of Google maps
+- Base URL - [https://developers.google.com/maps/documentation/javascript/overview](https://developers.google.com/maps/documentation/javascript/overview)
+
+   HTTP Verb | Endpoint | Description
+   ----------|----------|------------
+    `GET`    | /Routes | get best way to get to location pinpointed
+    `GET`    | [Optional]/maps | return specific character by name
+    `GET`    | /Places   | Allow users to discover/pinpoint over 100 million locations around the world
