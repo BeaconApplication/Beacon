@@ -91,6 +91,7 @@
    | isPublic  | boolean  | Determines whether or not the pin is public |
    | createdAt  | DateTime | Date when pin is created (default field) |
    | updatedAt | DateTime | Date when pin is last updated (default field) |
+   | allowChat | boolean | Determines whether or not a PUBLIC pin has a group chat (optional) |
 
 ### Networking
 #### List of network requests by screen
