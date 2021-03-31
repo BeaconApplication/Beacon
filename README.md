@@ -66,7 +66,13 @@
 
 ### Wireframes
 <img src="https://github.com/BeaconApplication/Beacon/blob/main/wireframes.png" width=1000><br>
+## Video Walkthrough
 
+Here's a walkthrough of implemented user stories:
+
+<img src='https://github.com/BeaconApplication/Beacon/blob/login_activity/walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
 ## Schema
 ### Models
 #### User
