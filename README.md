@@ -24,7 +24,7 @@
 ### Required Stories
 
 - [ ] Allow users to create and edit a pin with title, description, and location.
-- [ ] Have log-in and log-out activity screens.
+- [x] Have log-in and log-out activity screens.
 - [ ] Have activity with a list of pins by the user, and a tab with recently used pins. Tapping a pin displays the information about the pin and allows users to see its location.
 - [ ] Implement a widget that allows for creation for a pin from the home screen.
 
