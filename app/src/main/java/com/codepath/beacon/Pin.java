@@ -1,0 +1,89 @@
+package com.codepath.beacon;
+
+import java.util.ArrayList;
+import java.util.Dictionary;
+import java.util.List;
+
+import com.parse.ParseClassName;
+import com.parse.ParseFile;
+import com.parse.ParseObject;
+import com.parse.ParseUser;
+
+public class Pin extends ParseObject{
+    private static final String TAG = "Pin";
+    //Key References for Pin variables in PARSE.
+    private static final String KEY_ID = "objectID";
+    private static final String KEY_CREATOR = "creator";
+    private static final String KEY_UPDATED = "updatedAt";
+    private static final String KEY_CREATED = "createdAt";
+    private static final String KEY_NAME = "pinName";
+    private static final String KEY_DESCRIPTION = "pinCaption";
+    private static final String KEY_LOCATION = "pinLocation";
+    private static final String KEY_IMAGE = "pinImage";
+    private static final String KEY_PUBLIC = "isPublic";
+    private static final String KEY_ACCURACY = "pinAccuracy";
+
+    public String getID(){
+        return getString(KEY_ID);
+    }
+
+    public String getCreator(){
+        return getString(KEY_CREATOR);
+    }
+/*
+    public String getCreated(){ //Formatted as a date in PARSE server
+        return getString(KEY_CREATED);
+    }
+
+    public String getUpdated(){
+        return getString(KEY_UPDATED);
+    }
+ */
+    public String getPinName(){
+        return getString(KEY_NAME);
+    }
+
+    public void setPinName(String string){
+        put(KEY_NAME, string);
+    }
+
+    public String getPinDescription(){
+        return getString(KEY_DESCRIPTION);
+    }
+
+    public void setPinDescription(String string){
+        put(KEY_DESCRIPTION, string);
+    }
+
+    public List getPinLocation(){ //Check if this should be List
+        return getList(KEY_LOCATION);
+    }
+
+    public void setPinLocation(List array){ //Check if this should be List
+        put(KEY_LOCATION, array);
+    }
+
+    public ParseFile getPinImage(){
+        return getParseFile(KEY_NAME);
+    }
+
+    public void setPinImage(ParseFile image){
+        put(KEY_IMAGE, image);
+    }
+
+    public boolean getPinPrivacy(){
+        return getBoolean(KEY_PUBLIC);
+    }
+
+    public void setPinPrivacy(boolean privacy){
+        put(KEY_PUBLIC, privacy);
+    }
+
+    public double getPinAccuracy(){
+        return getDouble(KEY_ACCURACY);
+    }
+
+    public void setPinAccuracy(double accurate){
+        put(KEY_ACCURACY, accurate);
+    }
+}
