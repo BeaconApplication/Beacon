@@ -1,4 +1,4 @@
-# Beacon - Please view login_activity branch for review
+# Beacon
 ###### tags: Codepath
 
 > Allows users to store precise points on the map, can associate a location with a title and description. 
