@@ -1,4 +1,4 @@
-package com.codepath.beacon;
+package com.codepath.beacon.Models;
 
 import java.util.ArrayList;
 import java.util.Dictionary;
@@ -12,16 +12,16 @@ import com.parse.ParseUser;
 public class Pin extends ParseObject{
     private static final String TAG = "Pin";
     //Key References for Pin variables in PARSE.
-    private static final String KEY_ID = "objectID";
-    private static final String KEY_CREATOR = "creator";
-    private static final String KEY_UPDATED = "updatedAt";
-    private static final String KEY_CREATED = "createdAt";
-    private static final String KEY_NAME = "pinName";
-    private static final String KEY_DESCRIPTION = "pinCaption";
-    private static final String KEY_LOCATION = "pinLocation";
-    private static final String KEY_IMAGE = "pinImage";
-    private static final String KEY_PUBLIC = "isPublic";
-    private static final String KEY_ACCURACY = "pinAccuracy";
+    public static final String KEY_ID = "objectID";
+    public static final String KEY_CREATOR = "creator";
+    public static final String KEY_UPDATED = "updatedAt";
+    public static final String KEY_CREATED = "createdAt";
+    public static final String KEY_NAME = "pinName";
+    public static final String KEY_CAPTION = "pinCaption";
+    public static final String KEY_LOCATION = "pinLocation";
+    public static final String KEY_IMAGE = "pinImage";
+    public static final String KEY_PUBLIC = "isPublic";
+    public static final String KEY_ACCURACY = "pinAccuracy";
 
     public String getID(){
         return getString(KEY_ID);
@@ -47,12 +47,12 @@ public class Pin extends ParseObject{
         put(KEY_NAME, string);
     }
 
-    public String getPinDescription(){
-        return getString(KEY_DESCRIPTION);
+    public String getPinCaption(){
+        return getString(KEY_CAPTION);
     }
 
-    public void setPinDescription(String string){
-        put(KEY_DESCRIPTION, string);
+    public void setPinCaption(String string){
+        put(KEY_CAPTION, string);
     }
 
     public List getPinLocation(){ //Check if this should be List
