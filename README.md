@@ -87,17 +87,19 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
    | createdAt | DateTime | Date when user is created (default field) |
    | updatedAt| DateTime | Date when user is last updated (default field) |
 #### Pin
-| Property      | Type     | Description |
-   | ------------- | -------- | ------------|
-   | objectId      | String   | Unique id for the pin (default field) |
-   | creator        | Pointer to User| Pointer to pin author |
-   | pinImage         | File     | Image that user posts with pin |
-   | pinDescription| String   | Pin description by author |
-   | pinLocation| Array  | Stores the location of the pin (from Maps API) |
-   | isPublic  | boolean  | Determines whether or not the pin is public |
-   | createdAt  | DateTime | Date when pin is created (default field) |
-   | updatedAt | DateTime | Date when pin is last updated (default field) |
-   | allowChat | boolean | Determines whether or not a PUBLIC pin has a group chat (optional) |
+   | Property      | Type            | Description |
+   | ------------- | --------------- | ----------- |
+   | objectId      | String          | Unique id for the pin (default field) |
+   | creator       | Pointer to User | Pointer to pin author |
+   | pinName       | String          | Pin name by author |
+   | pinImage      | File            | Image that user posts with pin |
+   | pinCaption    | String          | Pin caption by author |
+   | pinAccuracy   | Number          | Pin accuracy |
+   | pinLocation   | Array           | Stores the location of the pin (from Maps API) |
+   | isPublic      | boolean         | Determines whether or not the pin is public |
+   | createdAt     | DateTime        | Date when pin is created (default field) |
+   | updatedAt     | DateTime        | Date when pin is last updated (default field) |
+   | allowChat     | boolean         | Determines whether or not a PUBLIC pin has a group chat (optional) |
 
 ### Networking
 #### List of network requests by screen
