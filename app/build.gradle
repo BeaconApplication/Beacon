@@ -39,4 +39,11 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     // Parse SDK
     implementation "com.github.parse-community.Parse-SDK-Android:parse:1.18.5"
+    implementation "androidx.appcompat:appcompat:${appCompatVersion}"
+    implementation "com.google.android.material:material:${designSupportVersion}"
+    //implementation "androidx.recyclerview:recyclerview:${recyclerViewVersion}"
+    implementation "androidx.percentlayout:percentlayout:1.0.0"
+    implementation "androidx.vectordrawable:vectordrawable:1.0.0" // VectorDrawableCompat
+    implementation "androidx.vectordrawable:vectordrawable-animated:1.0.0" // AnimatedVectorDrawableCompat
+    implementation "androidx.annotation:annotation:1.1.0"
 }
