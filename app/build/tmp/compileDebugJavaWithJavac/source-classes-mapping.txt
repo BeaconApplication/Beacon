@@ -1,12 +1,18 @@
-com/codepath/beacon/LoginActivity.java
- com.codepath.beacon.LoginActivity
- com.codepath.beacon.LoginActivity$1
- com.codepath.beacon.LoginActivity$2
+com/codepath/beacon/Adapters/PinsAdapter.java
+ com.codepath.beacon.Adapters.PinsAdapter
+ com.codepath.beacon.Adapters.PinsAdapter$ViewHolder
+com/codepath/beacon/Fragments/PinsFragment.java
+ com.codepath.beacon.Fragments.PinsFragment
+ com.codepath.beacon.Fragments.PinsFragment$1
 com/codepath/beacon/BuildConfig.java
  com.codepath.beacon.BuildConfig
+com/codepath/beacon/Activities/MainActivity.java
+ com.codepath.beacon.Activities.MainActivity
 com/codepath/beacon/ParseApplication.java
  com.codepath.beacon.ParseApplication
-com/codepath/beacon/MainActivity.java
- com.codepath.beacon.MainActivity
-com/codepath/beacon/Pin.java
- com.codepath.beacon.Pin
+com/codepath/beacon/Activities/LoginActivity.java
+ com.codepath.beacon.Activities.LoginActivity
+ com.codepath.beacon.Activities.LoginActivity$1
+ com.codepath.beacon.Activities.LoginActivity$2
+com/codepath/beacon/Models/Pin.java
+ com.codepath.beacon.Models.Pin

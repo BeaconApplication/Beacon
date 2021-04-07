@@ -34,26 +34,25 @@
 21-->C:\Users\dembi\Projects\AndroidStudioProjects\Beacon\app\src\main\AndroidManifest.xml:13:9-54
 22        android:supportsRtl="true"
 22-->C:\Users\dembi\Projects\AndroidStudioProjects\Beacon\app\src\main\AndroidManifest.xml:14:9-35
-23        android:testOnly="true"
-24        android:theme="@style/Theme.Beacon" >
-24-->C:\Users\dembi\Projects\AndroidStudioProjects\Beacon\app\src\main\AndroidManifest.xml:15:9-44
-25        <activity android:name="com.codepath.beacon.LoginActivity" >
-25-->C:\Users\dembi\Projects\AndroidStudioProjects\Beacon\app\src\main\AndroidManifest.xml:16:9-22:20
-25-->C:\Users\dembi\Projects\AndroidStudioProjects\Beacon\app\src\main\AndroidManifest.xml:16:19-48
-26            <intent-filter>
-26-->C:\Users\dembi\Projects\AndroidStudioProjects\Beacon\app\src\main\AndroidManifest.xml:17:13-21:29
-27                <action android:name="android.intent.action.MAIN" />
-27-->C:\Users\dembi\Projects\AndroidStudioProjects\Beacon\app\src\main\AndroidManifest.xml:18:17-69
-27-->C:\Users\dembi\Projects\AndroidStudioProjects\Beacon\app\src\main\AndroidManifest.xml:18:25-66
-28
-29                <category android:name="android.intent.category.LAUNCHER" />
-29-->C:\Users\dembi\Projects\AndroidStudioProjects\Beacon\app\src\main\AndroidManifest.xml:20:17-77
-29-->C:\Users\dembi\Projects\AndroidStudioProjects\Beacon\app\src\main\AndroidManifest.xml:20:27-74
-30            </intent-filter>
-31        </activity>
-32        <activity android:name="com.codepath.beacon.MainActivity" />
-32-->C:\Users\dembi\Projects\AndroidStudioProjects\Beacon\app\src\main\AndroidManifest.xml:23:9-59
-32-->C:\Users\dembi\Projects\AndroidStudioProjects\Beacon\app\src\main\AndroidManifest.xml:23:19-47
-33    </application>
-34
-35</manifest>
+23        android:theme="@style/Theme.Beacon" >
+23-->C:\Users\dembi\Projects\AndroidStudioProjects\Beacon\app\src\main\AndroidManifest.xml:15:9-44
+24        <activity android:name="com.codepath.beacon.Activities.LoginActivity" >
+24-->C:\Users\dembi\Projects\AndroidStudioProjects\Beacon\app\src\main\AndroidManifest.xml:16:9-22:20
+24-->C:\Users\dembi\Projects\AndroidStudioProjects\Beacon\app\src\main\AndroidManifest.xml:16:19-59
+25            <intent-filter>
+25-->C:\Users\dembi\Projects\AndroidStudioProjects\Beacon\app\src\main\AndroidManifest.xml:17:13-21:29
+26                <action android:name="android.intent.action.MAIN" />
+26-->C:\Users\dembi\Projects\AndroidStudioProjects\Beacon\app\src\main\AndroidManifest.xml:18:17-69
+26-->C:\Users\dembi\Projects\AndroidStudioProjects\Beacon\app\src\main\AndroidManifest.xml:18:25-66
+27
+28                <category android:name="android.intent.category.LAUNCHER" />
+28-->C:\Users\dembi\Projects\AndroidStudioProjects\Beacon\app\src\main\AndroidManifest.xml:20:17-77
+28-->C:\Users\dembi\Projects\AndroidStudioProjects\Beacon\app\src\main\AndroidManifest.xml:20:27-74
+29            </intent-filter>
+30        </activity>
+31        <activity android:name="com.codepath.beacon.Activities.MainActivity" />
+31-->C:\Users\dembi\Projects\AndroidStudioProjects\Beacon\app\src\main\AndroidManifest.xml:23:9-70
+31-->C:\Users\dembi\Projects\AndroidStudioProjects\Beacon\app\src\main\AndroidManifest.xml:23:19-58
+32    </application>
+33
+34</manifest>

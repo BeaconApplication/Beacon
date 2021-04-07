@@ -48,12 +48,20 @@
         "source": "C:\\Users\\dembi\\Projects\\AndroidStudioProjects\\Beacon\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
+        "merged": "C:\\Users\\dembi\\Projects\\AndroidStudioProjects\\Beacon\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_pin.xml.flat",
+        "source": "C:\\Users\\dembi\\Projects\\AndroidStudioProjects\\Beacon\\app\\src\\main\\res\\layout\\item_pin.xml"
+    },
+    {
         "merged": "C:\\Users\\dembi\\Projects\\AndroidStudioProjects\\Beacon\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "C:\\Users\\dembi\\Projects\\AndroidStudioProjects\\Beacon\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
         "merged": "C:\\Users\\dembi\\Projects\\AndroidStudioProjects\\Beacon\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\dembi\\Projects\\AndroidStudioProjects\\Beacon\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\dembi\\Projects\\AndroidStudioProjects\\Beacon\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_pins.xml.flat",
+        "source": "C:\\Users\\dembi\\Projects\\AndroidStudioProjects\\Beacon\\app\\src\\main\\res\\layout\\fragment_pins.xml"
     },
     {
         "merged": "C:\\Users\\dembi\\Projects\\AndroidStudioProjects\\Beacon\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
