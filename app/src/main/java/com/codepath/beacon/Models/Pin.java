@@ -9,6 +9,7 @@ import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 
+@ParseClassName("Pin")
 public class Pin extends ParseObject{
     private static final String TAG = "Pin";
     //Key References for Pin variables in PARSE.
