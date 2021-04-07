@@ -1,4 +1,4 @@
-package com.codepath.beacon.Fragments;
+package com.codepath.beacon;
 
 import android.os.Bundle;
 
@@ -13,8 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.codepath.beacon.Adapters.PinsAdapter;
-import com.codepath.beacon.Models.Pin;
+import com.codepath.beacon.PinsAdapter;
+import com.codepath.beacon.Pin;
 import com.codepath.beacon.R;
 import com.parse.FindCallback;
 import com.parse.ParseException;

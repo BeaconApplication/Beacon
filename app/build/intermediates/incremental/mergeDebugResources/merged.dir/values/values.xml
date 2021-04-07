@@ -7125,6 +7125,20 @@
             <enum name="decelerate" value="4"/>
             <enum name="decelerateAndComplete" value="5"/>
         </attr></declare-styleable>
+    <declare-styleable name="PercentLayout_Layout">
+        <attr format="fraction" name="layout_widthPercent"/>
+
+        <attr format="fraction" name="layout_heightPercent"/>
+
+        <attr format="fraction" name="layout_marginPercent"/>
+        <attr format="fraction" name="layout_marginLeftPercent"/>
+        <attr format="fraction" name="layout_marginTopPercent"/>
+        <attr format="fraction" name="layout_marginRightPercent"/>
+        <attr format="fraction" name="layout_marginBottomPercent"/>
+        <attr format="fraction" name="layout_marginStartPercent"/>
+        <attr format="fraction" name="layout_marginEndPercent"/>
+        <attr format="fraction" name="layout_aspectRatio"/>
+    </declare-styleable>
     <declare-styleable name="PopupWindow">
         <!-- Whether the popup window should overlap its anchor view. -->
         <attr format="boolean" name="overlapAnchor"/>

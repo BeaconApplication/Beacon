@@ -1,4 +1,4 @@
-package com.codepath.beacon.Adapters;
+package com.codepath.beacon;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,9 +8,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.codepath.beacon.Models.Pin;
-import com.codepath.beacon.R;
 
 import java.util.List;
 

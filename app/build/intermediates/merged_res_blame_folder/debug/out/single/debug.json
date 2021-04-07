@@ -24,6 +24,10 @@
         "source": "C:\\Users\\dembi\\Projects\\AndroidStudioProjects\\Beacon\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "C:\\Users\\dembi\\Projects\\AndroidStudioProjects\\Beacon\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_map_24.xml.flat",
+        "source": "C:\\Users\\dembi\\Projects\\AndroidStudioProjects\\Beacon\\app\\src\\main\\res\\drawable\\ic_baseline_map_24.xml"
+    },
+    {
         "merged": "C:\\Users\\dembi\\Projects\\AndroidStudioProjects\\Beacon\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_login.xml.flat",
         "source": "C:\\Users\\dembi\\Projects\\AndroidStudioProjects\\Beacon\\app\\src\\main\\res\\layout\\activity_login.xml"
     },
@@ -34,6 +38,18 @@
     {
         "merged": "C:\\Users\\dembi\\Projects\\AndroidStudioProjects\\Beacon\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\dembi\\Projects\\AndroidStudioProjects\\Beacon\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\dembi\\Projects\\AndroidStudioProjects\\Beacon\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_home_24.xml.flat",
+        "source": "C:\\Users\\dembi\\Projects\\AndroidStudioProjects\\Beacon\\app\\src\\main\\res\\drawable\\ic_baseline_home_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\dembi\\Projects\\AndroidStudioProjects\\Beacon\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_settings_24.xml.flat",
+        "source": "C:\\Users\\dembi\\Projects\\AndroidStudioProjects\\Beacon\\app\\src\\main\\res\\drawable\\ic_baseline_settings_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\dembi\\Projects\\AndroidStudioProjects\\Beacon\\app\\build\\intermediates\\res\\merged\\debug\\menu_menu_bottom_navigation.xml.flat",
+        "source": "C:\\Users\\dembi\\Projects\\AndroidStudioProjects\\Beacon\\app\\src\\main\\res\\menu\\menu_bottom_navigation.xml"
     },
     {
         "merged": "C:\\Users\\dembi\\Projects\\AndroidStudioProjects\\Beacon\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",

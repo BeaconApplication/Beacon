@@ -1,4 +1,4 @@
-package com.codepath.beacon.Models;
+package com.codepath.beacon;
 
 import java.util.ArrayList;
 import java.util.Dictionary;

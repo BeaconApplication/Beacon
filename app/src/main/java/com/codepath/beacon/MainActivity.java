@@ -1,4 +1,4 @@
-package com.codepath.beacon.Activites;
+package com.codepath.beacon;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
