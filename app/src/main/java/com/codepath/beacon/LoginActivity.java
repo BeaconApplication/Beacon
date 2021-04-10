@@ -13,7 +13,7 @@ import android.widget.Toast;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
-//dummy comment
+
 public class LoginActivity extends AppCompatActivity {
 
     public static final String TAG = "LoginActivity";
