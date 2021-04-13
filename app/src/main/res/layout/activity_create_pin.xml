@@ -13,28 +13,9 @@
         android:layout_height="53dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="-1dp"
-        android:layout_marginBottom="579dp"
+        android:layout_marginStart="-3dp"
+        android:layout_marginEnd="3dp"
         android:text="Create Pin"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="36sp"
-        tools:layout_editor_absoluteX="46dp"
-        tools:layout_editor_absoluteY="7dp" />
-
-    <TextView
-        android:id="@+id/titleText"
-        android:layout_width="411dp"
-        android:layout_height="53dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="-1dp"
-        android:layout_marginBottom="680dp"
-        android:text="Beacon"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="36sp"
@@ -43,53 +24,43 @@
 
     <EditText
         android:id="@+id/editTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="515dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="59dp"
+        android:layout_marginRight="10dp"
+        android:hint="Title"
         android:textColor="#000000"
         android:textSize="30sp"
         tools:text="Title" />
 
     <EditText
         android:id="@+id/editDescription"
-        android:layout_width="282dp"
-        android:layout_height="170dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="340dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginRight="10dp"
+        android:hint="Description"
         android:textColor="#000000"
         android:textSize="24sp"
         tools:text="Description" />
 
-    <CheckBox
-        android:id="@+id/publicPrivate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="290dp"
-        android:text="Public"
-        android:textSize="24sp" />
-
-    <CheckBox
-        android:id="@+id/groupCheck"
-        android:layout_width="240dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="171dp"
-        android:layout_marginBottom="225dp"
-        android:text="Allow group chat"
-        android:textSize="24sp" />
-
     <Button
         android:id="@+id/shareButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="397dp"
-        android:text="Share"
-        android:textColor="#FFFFFF" />
+        android:layout_below="@+id/editDescription"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:text="Create" />
+
 
 </RelativeLayout>
