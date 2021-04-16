@@ -44,12 +44,12 @@
         "source": "D:\\UserData\\Documents\\GitHub\\Beacon\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "D:\\UserData\\Documents\\GitHub\\Beacon\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "D:\\UserData\\Documents\\GitHub\\Beacon\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
-    },
-    {
         "merged": "D:\\UserData\\Documents\\GitHub\\Beacon\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_map_24.xml.flat",
         "source": "D:\\UserData\\Documents\\GitHub\\Beacon\\app\\src\\main\\res\\drawable\\ic_baseline_map_24.xml"
+    },
+    {
+        "merged": "D:\\UserData\\Documents\\GitHub\\Beacon\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "D:\\UserData\\Documents\\GitHub\\Beacon\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
     {
         "merged": "D:\\UserData\\Documents\\GitHub\\Beacon\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_login.xml.flat",

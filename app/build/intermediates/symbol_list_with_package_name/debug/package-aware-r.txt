@@ -1992,6 +1992,7 @@ id line3
 id linear
 id listMode
 id list_item
+id logoutButton
 id map
 id masked
 id material_clock_display

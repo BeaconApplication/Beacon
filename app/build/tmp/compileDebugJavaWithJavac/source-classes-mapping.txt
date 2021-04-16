@@ -10,6 +10,8 @@ com/codepath/beacon/PinsFragment.java
 com/codepath/beacon/MapsActivity.java
  com.codepath.beacon.MapsActivity
  com.codepath.beacon.MapsActivity$1
+ com.codepath.beacon.MapsActivity$1$1
+ com.codepath.beacon.MapsActivity$2
 com/codepath/beacon/BuildConfig.java
  com.codepath.beacon.BuildConfig
 com/codepath/beacon/Pin.java
@@ -22,6 +24,8 @@ com/codepath/beacon/MainActivity.java
 com/codepath/beacon/CreatePinActivity.java
  com.codepath.beacon.CreatePinActivity
  com.codepath.beacon.CreatePinActivity$1
+ com.codepath.beacon.CreatePinActivity$2
+ com.codepath.beacon.CreatePinActivity$3
 com/codepath/beacon/PinsAdapter.java
  com.codepath.beacon.PinsAdapter
  com.codepath.beacon.PinsAdapter$ViewHolder

@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.action_addpin:
                         fragment = new CreatePinActivity();
-                        break;
+                         break;
                 }
                 fragmentManager.beginTransaction().replace(R.id.flContainer, fragment).commit();
 

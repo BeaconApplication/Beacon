@@ -30,6 +30,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.parse.ParseGeoPoint;
 
 public class MapsActivity extends Fragment implements OnMapReadyCallback {
 
@@ -38,6 +39,10 @@ public class MapsActivity extends Fragment implements OnMapReadyCallback {
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
     final LatLng sydney = new LatLng(-34, 151);
     private FusedLocationProviderClient mFusedLocationClient;
+    private boolean mLocationPermissionGranted = false;
+    public static final int ERROR_DIALOG_REQUEST = 9001;
+    public static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 9002;
+    public static final int PERMISSIONS_REQUEST_ENABLE_GPS = 9003;
     LatLng currentPos;
 
     /**
@@ -53,7 +58,34 @@ public class MapsActivity extends Fragment implements OnMapReadyCallback {
         super.onCreate(savedInstanceState);
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this.getContext());
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.activity_maps, container, false);
+        View view = inflater.inflate(R.layout.activity_maps, container, false);
+        SupportMapFragment supportMapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
+        supportMapFragment.getMapAsync(new OnMapReadyCallback() {
+            @Override
+            public void onMapReady(GoogleMap googleMap) {
+                googleMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+                    @Override
+                    public void onMapClick(LatLng latLng) {
+                        MarkerOptions markerOptions = new MarkerOptions();
+                        markerOptions.position(latLng);
+                        markerOptions.title(latLng.latitude + " : " + latLng.longitude);
+
+                        CreatePinActivity createPinActivity = new CreatePinActivity();
+                        createPinActivity.updatePinLocation(latLng);
+                        // Try Saving to External Media then Read in CreatePinActivity;
+
+                        googleMap.clear();
+                        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10));
+                        googleMap.addMarker(markerOptions);
+                        getLastLocation();
+                    }
+                });
+            }
+        });
+        return view;
+    }
+    private void drawPins() {
+
     }
     private void getLastLocation() {
         Log.d(TAG, "getLastLocation called");
@@ -71,6 +103,23 @@ public class MapsActivity extends Fragment implements OnMapReadyCallback {
                 }
             }
         });
+    }
+    private void getLocationPermission() {
+        /*
+         * Request location permission, so that we can get the location of the
+         * device. The result of the permission request is handled by a callback,
+         * onRequestPermissionsResult.
+         */
+        if (ContextCompat.checkSelfPermission(this.getContext(),
+                android.Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED) {
+            mLocationPermissionGranted = true;
+            getLastLocation();
+        } else {
+            ActivityCompat.requestPermissions(this.getActivity(),
+                    new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
+                    PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
+        }
     }
     /*
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,7 +163,7 @@ public class MapsActivity extends Fragment implements OnMapReadyCallback {
         }
         mMap.setMyLocationEnabled(true);
 
-         */
+        */
 
         /*
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
@@ -143,5 +192,6 @@ public class MapsActivity extends Fragment implements OnMapReadyCallback {
 
         }
     }
+
 
 }

@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.List;
 
+import com.parse.Parse;
 import com.parse.ParseClassName;
 import com.parse.ParseFile;
+import com.parse.ParseGeoPoint;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 
@@ -19,7 +21,7 @@ public class Pin extends ParseObject{
     public static final String KEY_CREATED = "createdAt";
     public static final String KEY_NAME = "pinName";
     public static final String KEY_CAPTION = "pinCaption";
-    public static final String KEY_LOCATION = "pinLocation";
+    public static final String KEY_LOCATION = "pinGeoPoint";
     public static final String KEY_IMAGE = "pinImage";
     public static final String KEY_PUBLIC = "isPublic";
     public static final String KEY_ACCURACY = "pinAccuracy";
@@ -56,12 +58,12 @@ public class Pin extends ParseObject{
         put(KEY_CAPTION, string);
     }
 
-    public List getPinLocation(){ //Check if this should be List
-        return getList(KEY_LOCATION);
+    public ParseGeoPoint getPinGeoPoint(){ //Check if this should be List
+        return getParseGeoPoint(KEY_LOCATION);
     }
 
-    public void setPinLocation(List array){ //Check if this should be List
-        put(KEY_LOCATION, array);
+    public void setPinGeoPoint(ParseGeoPoint parseGeoPoint){ //Check if this should be List
+        put(KEY_LOCATION, parseGeoPoint);
     }
 
     public ParseFile getPinImage(){
