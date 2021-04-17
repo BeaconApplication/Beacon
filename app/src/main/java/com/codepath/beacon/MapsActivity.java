@@ -163,6 +163,7 @@ public class MapsActivity extends Fragment implements OnMapReadyCallback {
                 markerOption2.position(latLng2);
                 markerOption2.title("Picnic Spot");
                 googleMap.addMarker(markerOption2);
+                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng2, 10));
                 googleMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
                     @Override
                     public void onMapClick(LatLng latLng) {
