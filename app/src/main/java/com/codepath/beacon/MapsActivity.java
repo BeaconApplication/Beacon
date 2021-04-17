@@ -141,6 +141,7 @@ public class MapsActivity extends Fragment implements OnMapReadyCallback {
         supportMapFragment.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(GoogleMap googleMap) {
+                /*
                 if (allPins != null || allPins.size() != 0){
                     for (Pin newPin : allPins){
                         MarkerOptions marketOption = new MarkerOptions();
@@ -151,6 +152,17 @@ public class MapsActivity extends Fragment implements OnMapReadyCallback {
                     }
                 }
 
+                 */
+                MarkerOptions markerOption1 = new MarkerOptions();
+                LatLng latLng1 = new LatLng(40.45540109465747,-79.97976198792459);
+                markerOption1.position(latLng1);
+                markerOption1.title("Test Pin 2");
+                googleMap.addMarker(markerOption1);
+                MarkerOptions markerOption2 = new MarkerOptions();
+                LatLng latLng2 = new LatLng(40.4410651425909, -80.00819340348244);
+                markerOption2.position(latLng2);
+                markerOption2.title("Picnic Spot");
+                googleMap.addMarker(markerOption2);
                 googleMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
                     @Override
                     public void onMapClick(LatLng latLng) {
