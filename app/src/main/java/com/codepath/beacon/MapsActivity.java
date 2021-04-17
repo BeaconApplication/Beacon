@@ -154,16 +154,21 @@ public class MapsActivity extends Fragment implements OnMapReadyCallback {
 
                  */
                 MarkerOptions markerOption1 = new MarkerOptions();
-                LatLng latLng1 = new LatLng(40.45540109465747,-79.97976198792459);
+                LatLng latLng1 = new LatLng(40.45488856590125,-79.9816083535552);
                 markerOption1.position(latLng1);
-                markerOption1.title("Test Pin 2");
+                markerOption1.title("Car Location");
                 googleMap.addMarker(markerOption1);
                 MarkerOptions markerOption2 = new MarkerOptions();
                 LatLng latLng2 = new LatLng(40.4410651425909, -80.00819340348244);
                 markerOption2.position(latLng2);
                 markerOption2.title("Picnic Spot");
                 googleMap.addMarker(markerOption2);
-                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng2, 10));
+                MarkerOptions markerOption3 = new MarkerOptions();
+                LatLng latLng3 = new LatLng(40.45484621641154, -79.98162176460028);
+                markerOption3.position(latLng2);
+                markerOption3.title("Car Location");
+                googleMap.addMarker(markerOption3);
+                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng1, 10));
                 googleMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
                     @Override
                     public void onMapClick(LatLng latLng) {
