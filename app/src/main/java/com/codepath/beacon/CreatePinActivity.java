@@ -7,24 +7,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
+
 import com.google.android.gms.maps.model.LatLng;
-import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.ParseGeoPoint;
 import com.parse.SaveCallback;
-
-import java.util.ArrayList;
 
 public class CreatePinActivity extends Fragment {
     public static final String TAG = "CreatePinActivity";
@@ -41,6 +36,7 @@ public class CreatePinActivity extends Fragment {
     private Button shareButton;
     private Button logoutButton;
     private static ParseGeoPoint pinGeoPoint;
+    public static final String filename = "geoPointFile";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -58,7 +54,7 @@ public class CreatePinActivity extends Fragment {
         editTitle = view.findViewById(R.id.editTitle);
         editDescription = view.findViewById(R.id.editDescription);
         shareButton = view.findViewById(R.id.shareButton);
-        logoutButton = view.findViewById(R.id.logoutButton);
+        logoutButton = view.findViewById(R.id.pinLogout);
 
         shareButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +65,7 @@ public class CreatePinActivity extends Fragment {
                     return;
                 }
                 String pinCaption = editDescription.getText().toString();
+                //File cacheFile = new File(getContext().getCacheDir(), filename);
                 if (pinGeoPoint == null){
                     Toast.makeText(getContext(), "Error Getting Pin Location - Please Select a Location on the Map", Toast.LENGTH_SHORT).show();
                 }

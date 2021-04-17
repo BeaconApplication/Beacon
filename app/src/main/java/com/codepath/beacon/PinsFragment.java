@@ -1,5 +1,6 @@
 package com.codepath.beacon;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,10 +13,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
-import com.codepath.beacon.PinsAdapter;
-import com.codepath.beacon.Pin;
-import com.codepath.beacon.R;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
@@ -34,6 +33,7 @@ public class PinsFragment extends Fragment {
     private RecyclerView rvPins;
     private PinsAdapter adapter;
     private List<Pin> allPins;
+    private Button pinLogout;
 
     public PinsFragment() {
         // Required empty public constructor
@@ -55,6 +55,16 @@ public class PinsFragment extends Fragment {
         adapter = new PinsAdapter(getContext(), allPins);
         rvPins.setAdapter(adapter);
         rvPins.setLayoutManager(new LinearLayoutManager(getContext()));
+        pinLogout = view.findViewById(R.id.pinLogout);
+        pinLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ParseUser.logOut();
+                ParseUser currentUser = ParseUser.getCurrentUser(); // this will now be null
+                Intent i = new Intent(getContext(), LoginActivity.class);
+                startActivity(i);
+            }
+        });
 
         queryPins();
     }

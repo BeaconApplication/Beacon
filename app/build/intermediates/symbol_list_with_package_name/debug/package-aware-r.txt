@@ -1814,7 +1814,6 @@ id accessibility_custom_action_7
 id accessibility_custom_action_8
 id accessibility_custom_action_9
 id action0
-id action_addpin
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -1837,6 +1836,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id addPinButton
 id adjust_height
 id adjust_width
 id alertTitle
@@ -1992,7 +1992,6 @@ id line3
 id linear
 id listMode
 id list_item
-id logoutButton
 id map
 id masked
 id material_clock_display
@@ -2073,6 +2072,7 @@ id pathRelative
 id peekHeight
 id percent
 id pin
+id pinLogout
 id position
 id postLayout
 id progress_circular
@@ -2085,6 +2085,7 @@ id right
 id rightToLeft
 id right_icon
 id right_side
+id rlMaps
 id rounded
 id row_index_key
 id rvPins

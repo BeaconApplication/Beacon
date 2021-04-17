@@ -12,9 +12,4 @@
         android:icon="@drawable/ic_baseline_map_24"
         android:title="Map"
         app:showAsAction="always" />
-    <item
-        android:id="@+id/action_addpin"
-        android:icon="@drawable/ic_baseline_add_circle_24"
-        android:title="Add Pin"
-        app:showAsAction="always" />
 </menu>

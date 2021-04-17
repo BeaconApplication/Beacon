@@ -1,12 +1,15 @@
 package com.codepath.beacon;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.Manifest;
+import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -18,7 +21,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.PermissionRequest;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RelativeLayout;
+import android.widget.Toast;
 
+import java.util.Date;
+
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseFile;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseRelation;
+import com.parse.SaveCallback;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -30,11 +46,24 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.parse.ParseException;
 import com.parse.ParseGeoPoint;
+import com.parse.ParseObject;
+import com.parse.ParseUser;
+import com.parse.SaveCallback;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.List;
 
 public class MapsActivity extends Fragment implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    private EditText editTitle;
+    private EditText editDescription;
+    private FloatingActionButton createPinButton;
     public static final String TAG = "MapsActivity";
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
     final LatLng sydney = new LatLng(-34, 151);
@@ -43,13 +72,31 @@ public class MapsActivity extends Fragment implements OnMapReadyCallback {
     public static final int ERROR_DIALOG_REQUEST = 9001;
     public static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 9002;
     public static final int PERMISSIONS_REQUEST_ENABLE_GPS = 9003;
+    public static final String filename = "geoPointFile";
+    private static ParseGeoPoint pinGeoPoint;
+    private View view;
     LatLng currentPos;
+    final FragmentManager fragmentManager = getFragmentManager();
+    private RelativeLayout rlMaps;
+    private static String pinName;
+    private static String pinCaption;
+    private static final String userID = "qaWDT0oGk5";
+    private List<Pin> allPins;
 
     /**
      * Flag indicating whether a requested permission has been denied after returning in
      * {@link #onRequestPermissionsResult(int, String[], int[])}.
      */
 
+    /*
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        createPinButton = view.findViewById(R.id.addPinButton);
+
+    }
+
+     */
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -58,22 +105,73 @@ public class MapsActivity extends Fragment implements OnMapReadyCallback {
         super.onCreate(savedInstanceState);
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this.getContext());
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.activity_maps, container, false);
+        view = inflater.inflate(R.layout.activity_maps, container, false);
+        editTitle = view.findViewById(R.id.editTitle);
+        editDescription = view.findViewById(R.id.editDescription);
+        createPinButton = view.findViewById(R.id.addPinButton);
+        rlMaps = view.findViewById(R.id.rlMaps);
+        createPinButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (editTitle.getText().toString() == null){
+                    Toast.makeText(getContext(), "Title cannot be empty", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                else{
+                    String pinName = editTitle.getText().toString();
+                }
+                if (currentPos == null){
+                    Toast.makeText(getContext(), "Error Getting Pin Location - Please Select a Location on the Map", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    pinGeoPoint = new ParseGeoPoint(currentPos.latitude, currentPos.longitude);
+                    ParseUser currentUser = ParseUser.getCurrentUser();
+                    pinName = editTitle.getText().toString();
+                    pinCaption = editDescription.getText().toString();
+                    //Pin newPin = new Pin();
+                    //newPin.createObject(pinName, pinCaption, currentUser, pinGeoPoint);
+                    createObject(pinName, pinCaption, currentUser, pinGeoPoint);
+                    //savePin(pinName, pinCaption, currentUser, pinGeoPoint);
+                }
+
+
+            }
+        });
         SupportMapFragment supportMapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
         supportMapFragment.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(GoogleMap googleMap) {
+                if (allPins != null || allPins.size() != 0){
+                    for (Pin newPin : allPins){
+                        MarkerOptions marketOption = new MarkerOptions();
+                        ParseGeoPoint currentPinGeoPoint = newPin.getPinGeoPoint();
+                        marketOption.position(new LatLng(currentPinGeoPoint.getLatitude(), currentPinGeoPoint.getLongitude()));
+                        marketOption.title(newPin.getPinName());
+                        googleMap.addMarker(marketOption);
+                    }
+                }
+
                 googleMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
                     @Override
                     public void onMapClick(LatLng latLng) {
+                        currentPos = latLng;
                         MarkerOptions markerOptions = new MarkerOptions();
                         markerOptions.position(latLng);
                         markerOptions.title(latLng.latitude + " : " + latLng.longitude);
 
-                        CreatePinActivity createPinActivity = new CreatePinActivity();
-                        createPinActivity.updatePinLocation(latLng);
+                        //CreatePinActivity createPinActivity = new CreatePinActivity();
+                        //createPinActivity.updatePinLocation(latLng);
                         // Try Saving to External Media then Read in CreatePinActivity;
-
+                        //try (FileOutputStream fos = getContext().openFileOutput(filename, Context.MODE_PRIVATE)) {
+                        //    fos.write();
+                        //}
+                        /*
+                          try {
+                            File.createTempFile(filename, null, getContext().getCacheDir());
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                         */
                         googleMap.clear();
                         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10));
                         googleMap.addMarker(markerOptions);
@@ -84,9 +182,26 @@ public class MapsActivity extends Fragment implements OnMapReadyCallback {
         });
         return view;
     }
-    private void drawPins() {
 
-    }
+
+
+    private void readObject() {
+        ParseQuery<Pin> query = ParseQuery.getQuery("Pin");
+        query.include(userID);
+        query.findInBackground(new FindCallback<Pin>() {
+            @Override
+            public void done(List<Pin> objects, ParseException e) {
+                if (e != null) {
+                    Log.e(TAG, "Issue with getting pins", e);
+                    return;
+                }
+                for (Pin pin : objects){
+                }
+                allPins.addAll(objects);
+        }
+        });
+
+        }
     private void getLastLocation() {
         Log.d(TAG, "getLastLocation called");
         if (ActivityCompat.checkSelfPermission(this.getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this.getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -193,5 +308,48 @@ public class MapsActivity extends Fragment implements OnMapReadyCallback {
         }
     }
 
+    private void savePin(String pinName, String pinCaption, ParseUser currentUser, ParseGeoPoint pinLocation) {
+        Pin pin = new Pin();
+        //ParseObject.create("Pin");
+        pin.setPinName(pinName);
+        pin.setCreator(currentUser);
+        pin.setPinCaption(pinCaption);
+        pin.setPinGeoPoint(pinLocation);
+        pin.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                if (e != null) {
+                    Log.e(TAG, "Error while saving", e);
+                    return;
+                }
+                Log.i(TAG, "Pin save was successful!!!");
+                Toast.makeText(getContext(), "Pin Save Successful!", Toast.LENGTH_SHORT).show();
+                //editTitle.setText("");
+                //editDescription.setText("");
+                pinGeoPoint = null;
+            }
+        });
+    }
+    public void createObject(String pinName, String pinCaption, ParseUser currentUser, ParseGeoPoint pinLocation) {
+        ParseObject entity = new ParseObject("Pin");
+
+        entity.put("pinName", pinName);
+        entity.put("pinCaption", pinCaption);
+        entity.put("creator", userID);
+        entity.put("pinLocation", pinLocation);
+
+        // Saves the new object.
+        // Notice that the SaveCallback is totally optional!
+        entity.saveInBackground(e -> {
+            if (e == null) {
+                //Save was done
+            } else {
+                //Something went wrong
+                //Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.i(TAG, "Pin save was successful!!!");
+            }
+        });
+
+    }
 
 }

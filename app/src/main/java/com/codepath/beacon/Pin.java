@@ -1,5 +1,8 @@
 package com.codepath.beacon;
 
+import android.util.Log;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.List;
@@ -10,6 +13,14 @@ import com.parse.ParseFile;
 import com.parse.ParseGeoPoint;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
+import java.util.Date;
+
+import com.parse.ParseException;
+import com.parse.ParseFile;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseRelation;
+import com.parse.SaveCallback;
 
 @ParseClassName("Pin")
 public class Pin extends ParseObject{
@@ -32,6 +43,10 @@ public class Pin extends ParseObject{
 
     public String getCreator(){
         return getString(KEY_CREATOR);
+    }
+
+    public void setCreator(ParseUser user){
+        put(KEY_CREATOR, user);
     }
 /*
     public String getCreated(){ //Formatted as a date in PARSE server
@@ -88,5 +103,26 @@ public class Pin extends ParseObject{
 
     public void setPinAccuracy(double accurate){
         put(KEY_ACCURACY, accurate);
+    }
+
+    public void createObject(String pinName, String pinCaption, ParseUser currentUser, ParseGeoPoint pinLocation) {
+        ParseObject entity = new ParseObject("Pin");
+
+        entity.put("pinName", pinName);
+        entity.put("pinCaption", pinCaption);
+        entity.put("creator", currentUser);
+        entity.put("pinLocation", pinLocation);
+
+        // Saves the new object.
+        // Notice that the SaveCallback is totally optional!
+        entity.saveInBackground(e -> {
+            if (e == null) {
+                //Save was done
+            } else {
+                //Something went wrong
+                //Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.i(TAG, "Pin save was successful!!!");
+            }
+        });
     }
 }
